@@ -1,0 +1,294 @@
+:root {
+  --main-dark: #0f1c2c;
+  --secondary-dark: #1a2a3a;
+  --accent-orange: #ffaa00;
+  --accent-green: #99ff33;
+  --text-light: #f0f0f0;
+  --header-height: 60px;
+}
+
+/* پایه */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: var(--main-dark);
+  color: var(--text-light);
+  margin: 0;
+  font-family: Tahoma, "Helvetica Neue", Arial, sans-serif;
+  direction: rtl;
+}
+
+/* لینک‌ها */
+a {
+  text-decoration: none;
+  color: var(--accent-orange);
+  transition: color 0.25s ease;
+}
+
+/* -------------------------------------- */
+/* --- استایل‌های نوار ناوبری (Header) --- */
+/* -------------------------------------- */
+
+/* هدر / ناوبری */
+.header-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  padding: 10px 20px;
+  background-color: var(--main-dark);
+  z-index: 1100;
+  display: flex;
+  justify-content: flex-start; /* چینش از سمت راست در دسکتاپ */
+  align-items: center;
+  border-bottom: 2px solid var(--accent-orange);
+  gap: 25px; /* فاصله بین نام و منو */
+}
+
+/* عنوان سایت - سمت راست */
+.site-title {
+  order: 1;
+  margin: 0; /* حذف margin-right/left اضافی */
+}
+.site-title a {
+  color: var(--accent-green);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* منوی افقی (دسکتاپ) */
+.horizontal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* حذف margin-left: auto در حالت عمومی */
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  order: 2;
+  transition: transform 0.3s ease-out; /* برای انیمیشن موبایل */
+}
+
+.horizontal-list li a {
+  color: var(--text-light);
+  padding: 10px 12px;
+  display: block;
+}
+
+.horizontal-list li a:hover {
+  color: var(--accent-orange);
+}
+
+/* دکمه همبرگر (استایل کلی) */
+.header-mobile-nav {
+  /* display: none; حذف شد تا در موبایل بتواند display: flex بگیرد */
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1200;
+  background: transparent;
+  border-radius: 4px;
+  order: 3;
+  /* در حالت پیش‌فرض (دسکتاپ) پنهان باشد. */
+  display: none;
+}
+
+.header-mobile-nav-item {
+  height: 3px;
+  width: 22px;
+  background-color: var(--accent-orange);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* -------------------------------------- */
+/* --- استایل‌های محتوای اصلی --- */
+/* -------------------------------------- */
+
+.main-content {
+  padding-top: calc(var(--header-height) + 10px);
+}
+
+.section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 50vh;
+}
+
+/* تایپوگرافی */
+h1 {
+  font-size: 3rem;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-orange);
+  text-align: center;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* صفحه قهرمان */
+.hero-section {
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: var(--accent-orange);
+  color: var(--main-dark);
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff8c00;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  color: var(--accent-green);
+  border-bottom: 1px solid var(--accent-green);
+}
+
+/* -------------------------------------- */
+/* --- بخش مهارت‌ها (Skills) --- */
+/* -------------------------------------- */
+.skills-section {
+  background-color: var(--main-dark);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.skill-item {
+  background-color: var(--secondary-dark);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid var(--accent-green);
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #2b3b4b;
+  cursor: default;
+}
+
+/* -------------------------------------- */
+/* --- استایل‌های ریسپانسیو (Media) --- */
+/* -------------------------------------- */
+
+/* دسکتاپ (از 768px به بالا) */
+@media screen and (min-width: 768px) {
+  .header-mobile-nav {
+    display: none; /* پنهان شدن دکمه در دسکتاپ */
+  }
+}
+
+/* موبایل و تبلت (زیر 768px) */
+@media screen and (max-width: 767px) {
+  /* تنظیم هدر برای موبایل (نام در راست، همبرگری در چپ) */
+  .header-nav {
+    justify-content: space-between;
+  }
+
+  /* *** نمایش دکمه همبرگری در موبایل *** */
+  .header-mobile-nav {
+    display: flex; /* کلید اصلی: نمایش دکمه در موبایل */
+  }
+
+  /* تنظیم منوی کشویی در حالت پنهان */
+  .horizontal-list {
+    /* ابتدا منو را از دید خارج می‌کنیم تا با انیمیشن باز شود */
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: 280px;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--main-dark);
+    z-index: 1099;
+
+    /* *کلید اصلی پنهان سازی و انیمیشن* */
+    display: flex; /* باید flex باشد تا آیتم‌های آن درست چیده شوند */
+    flex-direction: column;
+    transform: translateX(100%); /* منو را به خارج از صفحه هل می‌دهد */
+
+    /* استایل‌های اضافه برای ظاهر */
+    padding: 20px;
+    border-left: 2px solid var(--accent-orange);
+    overflow-y: auto;
+  }
+
+  /* *کلید اصلی نمایش منو (وقتی JS کلاس is-open را اضافه می‌کند)* */
+  .horizontal-list.is-open {
+    transform: translateX(0); /* منو را به داخل صفحه می‌آورد */
+  }
+
+  /* استایل‌های آیتم‌های منو در حالت موبایل */
+  .horizontal-list li {
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-dark);
+  }
+  .horizontal-list li a {
+    padding: 15px 20px;
+    color: var(--text-light);
+    text-align: right;
+    width: 100%;
+  }
+  .horizontal-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* انیمیشن دکمه همبرگر (تبدیل به X) */
+  .header-mobile-nav.is-active .header-mobile-nav-item:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .header-mobile-nav.is-active .header-mobile-nav-item:nth-child(2) {
+    opacity: 0;
+  }
+  .header-mobile-nav.is-active .header-mobile-nav-item:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+}
