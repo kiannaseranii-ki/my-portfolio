@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پورتفولیو - کیان ناصرانی</title>
     <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="description"
+      content="کیان ناصرانی | توسعه‌دهنده فرانت‌اند؛ پورتفولیو، مهارت‌ها و نمونه‌کارها"
+    />
+    <link rel="canonical" href="https://example.com/" />
+    <!-- TODO: آدرس دامنه واقعی را جایگزین کنید -->
+    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:title" content="کیان ناصرانی - توسعه‌دهنده فرانت‌اند" />
+    <meta property="og:description" content="پورتفولیو و نمونه‌کارهای وب" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kian Naserani",
+        "url": "https://example.com/",
+        "jobTitle": "Front-End Developer",
+        "sameAs": ["https://github.com/USERNAME", "mailto:you@example.com"]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">پرش به محتوا</a>
     <header class="header">
       <nav
         id="primary-navigation"
@@ -21,7 +45,7 @@
         <button
           class="header-mobile-nav"
           aria-expanded="false"
-          aria-controls="primary-navigation"
+          aria-controls="site-menu"
           title="باز و بسته کردن منو"
         >
           <span class="header-mobile-nav-item"></span>
@@ -29,18 +53,18 @@
           <span class="header-mobile-nav-item"></span>
         </button>
 
-        <ul class="horizontal-list" role="menubar">
-          <li role="none"><a role="menuitem" href="#skills">مهارت‌ها</a></li>
-          <li role="none"><a role="menuitem" href="#about">درباره من</a></li>
+        <ul class="horizontal-list" id="site-menu">
+          <li role="none"><a href="#skills">مهارت‌ها</a></li>
+          <li role="none"><a href="#about">درباره من</a></li>
           <li role="none">
-            <a role="menuitem" href="#projects">نمونه کارها</a>
+            <a href="#projects">نمونه کارها</a>
           </li>
-          <li role="none"><a role="menuitem" href="#contact">تماس با من</a></li>
+          <li role="none"><a href="#contact">تماس با من</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="main-content">
+    <main id="main" class="main-content">
       <section
         id="hero"
         class="section hero-section"
@@ -53,8 +77,18 @@
         <a href="#projects" class="cta-button">مشاهده نمونه کارها</a>
 
         <div class="social-links" aria-label="لینک‌های اجتماعی">
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-          <a href="mailto:example@example.com">ایمیل</a>
+          <a
+            href="https://github.com/kiannaseranii-ki"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="mailto:kian.naseranii@gmailcom"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Gmail</a
+          >
         </div>
       </section>
 
@@ -95,7 +129,13 @@
             این صفحه به عنوان اولین نمونه کار، مهارت‌های اصلی در HTML و CSS و
             Javascript طراحی ریسپانسیو است.
           </p>
-          <a href="#" target="_blank" class="project-link">مشاهده کد</a>
+          <a
+            href="#"
+            target="_blank"
+            class="project-link"
+            rel="noopener noreferrer"
+            >مشاهده کد</a
+          >
         </div>
       </section>
 
@@ -116,3 +156,4 @@
     <script src="js/main.js" defer></script>
   </body>
 </html>
+n

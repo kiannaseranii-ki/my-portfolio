@@ -5,14 +5,46 @@ const navList = document.querySelector(".horizontal-list");
 const primaryNav = document.getElementById("primary-navigation"); // عنصر والد منو
 
 if (mobileNavButton && navList && primaryNav) {
+  /* Focus trap for mobile menu */
+  let lastActiveElement = null;
+  const getFocusable = () =>
+    Array.from(
+      navList.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])')
+    ).filter((el) => !el.hasAttribute("disabled"));
+
+  const keydownTrapHandler = (e) => {
+    if (e.key === "Tab") {
+      const items = getFocusable();
+      if (items.length === 0) return;
+      const first = items[0],
+        last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    } else if (e.key === "Escape") {
+      toggleMenu(false);
+    }
+  };
+
   const toggleMenu = (open) => {
     // باز/بسته کردن کلاس is-open روی ul
     navList.classList.toggle("is-open", open);
-    // باز/بسته کردن کلاس is-active روی دکمه همبرگری
     mobileNavButton.classList.toggle("is-active", open);
-    // تنظیم وضعیت aria-expanded برای دسترس‌پذیری
     mobileNavButton.setAttribute("aria-expanded", open ? "true" : "false");
-
+    document.body.classList.toggle("body--menu-open", open);
+    if (open) {
+      lastActiveElement = document.activeElement;
+      document.addEventListener("keydown", keydownTrapHandler, true);
+    } else {
+      document.removeEventListener("keydown", keydownTrapHandler, true);
+      if (lastActiveElement) {
+        lastActiveElement.focus();
+      }
+    }
     if (open) {
       // تمرکز روی اولین لینک هنگام باز شدن برای دسترس‌پذیری
       const firstLink = navList.querySelector("a");

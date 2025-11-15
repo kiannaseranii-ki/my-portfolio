@@ -292,3 +292,86 @@ p {
     transform: rotate(-45deg) translate(5px, -6px);
   }
 }
+
+/* --- A11y & UX additions --- */
+.skip-link {
+  position: absolute;
+  inset-inline-start: -9999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1300;
+}
+.skip-link:focus {
+  inset-inline-start: 12px;
+}
+
+/* اسکرول نرم و جلوگیری از پوشانده‌شدن آنکرها زیر هدر */
+html {
+  scroll-behavior: smooth;
+}
+.section {
+  scroll-margin-top: calc(var(--header-height) + 10px);
+}
+
+/* حلقه فوکوس واضح برای عناصر تعاملی */
+a:focus-visible,
+.cta-button:focus-visible,
+.header-mobile-nav:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* قفل اسکرول وقتی منوی موبایل باز است */
+.body--menu-open {
+  overflow: hidden;
+}
+
+/* احترام به ترجیحات کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* گرید پروژه‌ها */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.project-card {
+  background: var(--secondary-dark);
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #223446;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+.project-link {
+  display: inline-block;
+  margin-top: 8px;
+  border-bottom: 1px dashed var(--accent-orange);
+}
+.social-links a {
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent-green);
+  color: var(--main-dark);
+  transform: translateY(-2px);
+}
