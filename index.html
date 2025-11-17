@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>پورتفولیو - کیان ناصرانی</title>
+    <title class="title-name">پورتفولیو - کیان ناصرانی</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta
       name="description"
-      content="کیان ناصرانی | توسعه‌دهنده فرانت‌اند؛ پورتفولیو، مهارت‌ها و نمونه‌کارها"
+      content="کیان ناصرانی | توسعه‌دهنده فرانت‌اند؛ مهارت‌ها، نمونه‌کارها و روش‌های ارتباط"
     />
     <link rel="canonical" href="https://example.com/" />
-    <!-- TODO: آدرس دامنه واقعی را جایگزین کنید -->
     <link rel="icon" href="/favicon.ico" />
     <meta property="og:title" content="کیان ناصرانی - توسعه‌دهنده فرانت‌اند" />
-    <meta property="og:description" content="پورتفولیو و نمونه‌کارهای وب" />
+    <meta
+      property="og:description"
+      content="پورتفولیو، مهارت‌ها و پروژه‌های ساخته‌شده با تمرکز بر UX"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://example.com/" />
     <meta property="og:image" content="https://example.com/cover.jpg" />
@@ -25,11 +27,29 @@
         "name": "Kian Naserani",
         "url": "https://example.com/",
         "jobTitle": "Front-End Developer",
-        "sameAs": ["https://github.com/USERNAME", "mailto:you@example.com"]
+        "sameAs": [
+          "https://github.com/kiannaseranii-ki",
+          "mailto:kian.naseranii@gmail.com"
+        ]
       }
     </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="preloader-active">
+    <div id="site-preloader" class="preloader" role="status" aria-live="polite">
+      <div class="preloader-inner">
+        <img
+          src="images/site-logo.png"
+          alt="لوگوی کیان ناصرانی"
+          class="preloader-logo"
+        />
+        <p>در حال بارگذاری...</p>
+      </div>
+    </div>
+
     <a class="skip-link" href="#main">پرش به محتوا</a>
     <header class="header">
       <nav
@@ -38,8 +58,18 @@
         role="navigation"
         aria-label="منوی اصلی"
       >
-        <div class="site-title">
-          <a href="#hero">کیان ناصرانی</a>
+        <div class="site-branding fade-in-text">
+          <a href="#hero" class="brand-link" aria-label="بازگشت به ابتدای صفحه">
+            <img
+              src="images/site-logo.png"
+              alt="لوگو کیان ناصرانی"
+              class="brand-logo"
+              width="64"
+              height="64"
+              decoding="async"
+            />
+            <span class="sr-only">کیان ناصرانی</span>
+          </a>
         </div>
 
         <button
@@ -56,9 +86,7 @@
         <ul class="horizontal-list" id="site-menu">
           <li role="none"><a href="#skills">مهارت‌ها</a></li>
           <li role="none"><a href="#about">درباره من</a></li>
-          <li role="none">
-            <a href="#projects">نمونه کارها</a>
-          </li>
+          <li role="none"><a href="#projects">نمونه‌کارها</a></li>
           <li role="none"><a href="#contact">تماس با من</a></li>
         </ul>
       </nav>
@@ -70,25 +98,59 @@
         class="section hero-section"
         aria-labelledby="hero-heading"
       >
-        <h1 id="hero-heading">کیان ناصرانی، توسعه‌دهنده فرانت‌اند</h1>
-        <p class="subtitle">
-          ایجاد رابط‌های کاربری ریسپانسیو و بهینه با HTML، CSS و JavaScript خالص
-        </p>
-        <a href="#projects" class="cta-button">مشاهده نمونه کارها</a>
+        <div class="hero-grid">
+          <div class="hero-text" data-animate>
+            <span class="hero-eyebrow">توسعه‌دهنده فرانت‌اند</span>
+            <h1 id="hero-heading" class="fade-in-text">
+              کیان ناصرانی، طراح رابط‌های کاربری مدرن
+            </h1>
+            <p class="subtitle">
+              ساخت تجربه‌های سریع، واکنش‌گرا و قابل‌دسترس با تمرکز بر جزئیات
+              طراحی و کدنویسی تمیز در HTML، CSS و JavaScript خالص.
+            </p>
+            <div class="hero-cta">
+              <a href="#projects" class="cta-button">مشاهده نمونه کارها</a>
+              <a href="#contact" class="secondary-button">در تماس باشیم</a>
+            </div>
+            <div class="social-links" aria-label="لینک‌های اجتماعی">
+              <a
+                href="https://github.com/kiannaseranii-ki"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+                  alt="GitHub"
+                  class="github-icon"
+                  width="18"
+                  height="18"
+                />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kian-naserani-977729273"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  class="linkedin-icon"
+                  width="18"
+                  height="18"
+                />
+                LinkedIn
+              </a>
+            </div>
+          </div>
 
-        <div class="social-links" aria-label="لینک‌های اجتماعی">
-          <a
-            href="https://github.com/kiannaseranii-ki"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="mailto:kian.naseranii@gmailcom"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Gmail</a
-          >
+          <div class="hero-visual" data-animate="slide-left">
+            <img src="images/site-logo.png" alt="تصویر نمایه کیان ناصرانی" />
+            <div class="hero-visual-card">
+              <span>+1 پروژه</span>
+              <span>همکاری فعال و فریلنس</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -98,7 +160,7 @@
         aria-labelledby="skills-heading"
       >
         <h2 id="skills-heading">مهارت‌های فنی</h2>
-        <div class="skills-grid">
+        <div class="skills-grid" data-animate>
           <div class="skill-item">HTML5 & Semantic Markup</div>
           <div class="skill-item">CSS3 (Flexbox & Grid)</div>
           <div class="skill-item">JavaScript (ES6+)</div>
@@ -114,7 +176,26 @@
         aria-labelledby="about-heading"
       >
         <h2 id="about-heading">درباره من</h2>
-        <p>محتوای این بخش بعداً تکمیل خواهد شد.</p>
+        <div class="about-layout" data-animate="slide-left">
+          <div class="about-text">
+            <p>
+              من توسعه‌دهنده فرانت‌اند هستم و روی طراحی و ساخت رابط‌های کاربری
+              مدرن، سریع و کاربرمحور تمرکز دارم. به کدنویسی تمیز، ساختاردهی دقیق
+              و بهینه‌سازی تجربه کاربری اهمیت می‌دهم و تلاش می‌کنم هر پروژه
+              ترکیبی از زیبایی و عملکرد باشد.
+            </p>
+            <p>
+              آشنایی با SEO، وردپرس و مفاهیم برنامه‌نویسی پایتون نیز به درک بهتر
+              تحلیل و توسعه کمک کرده است. هدف من ارائه راه‌حل‌های قابل اتکا و
+              مشارکت در پروژه‌های حرفه‌ای با استانداردهای روز وب است.
+            </p>
+          </div>
+          <ul class="about-highlights">
+            <li>طراحی رابط‌های واکنش‌گرا و قابل‌دسترس</li>
+            <li>تمرکز بر UX و بهینه‌سازی سرعت</li>
+            <li>همکاری فریلنس و تیمی با تحویل دقیق</li>
+          </ul>
+        </div>
       </section>
 
       <section
@@ -122,20 +203,85 @@
         class="section projects-section"
         aria-labelledby="projects-heading"
       >
-        <h2 id="projects-heading">نمونه کارها</h2>
-        <div class="project-card">
-          <h3>پروژه ۱: Landing Page شخصی</h3>
-          <p>
-            این صفحه به عنوان اولین نمونه کار، مهارت‌های اصلی در HTML و CSS و
-            Javascript طراحی ریسپانسیو است.
-          </p>
-          <a
-            href="#"
-            target="_blank"
-            class="project-link"
-            rel="noopener noreferrer"
-            >مشاهده کد</a
-          >
+        <h2 id="projects-heading">نمونه‌کارها</h2>
+        <div class="projects-grid">
+          <div class="project-card" data-animate>
+            <div class="project-header">
+              <h3>پروژه ۱: Landing Page شخصی</h3>
+              <span>2024</span>
+            </div>
+            <p>
+              صفحه فرود معرفی شخصی با تأکید بر دسترس‌پذیری، انیمیشن‌های ظریف و
+              امتیاز Lighthouse بالای ۹۰ در دسکتاپ.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">Vanilla JS</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/kiannaseranii-ki/1"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >مشاهده کد</a
+              >
+              <a href="#hero" class="project-demo">دمو زنده</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-animate>
+            <div class="project-header">
+              <h3>پروژه ۲: داشبورد مدیریت</h3>
+              <span>2023</span>
+            </div>
+            <p>
+              طراحی سیستم مدیریتی با Dark Mode، نمودارهای سبک و اجزای واکنش‌گرا
+              برای نمایش آمار روزانه.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">CSS Grid</span>
+              <span class="project-tag">Chart.js</span>
+              <span class="project-tag">UX Writing</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/kiannaseranii-ki"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >مشاهده کد</a
+              >
+              <a href="#" class="project-demo" aria-disabled="true">به‌زودی</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-animate>
+            <div class="project-header">
+              <h3>پروژه ۳: وبلاگ فنی</h3>
+              <span>2022</span>
+            </div>
+            <p>
+              توسعه قالب وبلاگ برای انتشار مقالات فنی با تمرکز بر SEO و تجربه
+              مطالعه راحت در موبایل.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">WordPress</span>
+              <span class="project-tag">SEO</span>
+              <span class="project-tag">Performance</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/kiannaseranii-ki"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >مشاهده کد</a
+              >
+              <a href="#" class="project-demo" aria-disabled="true">به‌زودی</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -144,16 +290,84 @@
         class="section contact-section"
         aria-labelledby="contact-heading"
       >
-        <h2 id="contact-heading">تماس با من</h2>
-        <p>محتوای این بخش بعداً تکمیل خواهد شد.</p>
+        <h2 id="contact-heading">ارتباط با من</h2>
+        <p>
+          برای همکاری یا طرح ایده جدید می‌توانید از شبکه‌های زیر استفاده کنید یا
+          فرم کوتاه را تکمیل کنید تا در اولین فرصت پاسخ دهم.
+        </p>
+
+        <div class="contact-links">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kian.naseranii@gmail.com"
+            class="contact-btn gmail-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_(2020).svg"
+              class="gmail-icon"
+              alt="Gmail"
+            />
+            Gmail
+          </a>
+
+          <a
+            href="https://github.com/kian-naseranii"
+            class="contact-btn github-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+              class="github-icon"
+              alt="GitHub"
+            />
+            GitHub
+          </a>
+
+          <a
+            href="https://t.me/Kiannaserani"
+            class="contact-btn telegram-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg"
+              class="telegram-icon"
+              alt="Telegram"
+            />
+            Telegram
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kian-naserani-977729273"
+            class="contact-btn linkedin-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+              class="linkedin-icon"
+              alt="LinkedIn"
+            />
+            LinkedIn
+          </a>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <input type="text" name="name" placeholder="نام شما" required />
+          <input type="email" name="email" placeholder="ایمیل" required />
+          <textarea name="message" placeholder="پیام شما" required></textarea>
+          <button type="submit" class="cta-button">ارسال پیام</button>
+          <p class="form-status" data-status></p>
+        </form>
       </section>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2024 کیان ناصرانی</p>
+      <p>&copy; 2025 کیان ناصرانی</p>
     </footer>
 
     <script src="js/main.js" defer></script>
   </body>
 </html>
-n

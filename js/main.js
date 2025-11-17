@@ -97,3 +97,57 @@ if (mobileNavButton && navList && primaryNav) {
     }
   });
 }
+const animatedItems = document.querySelectorAll("[data-animate]");
+if (animatedItems.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  animatedItems.forEach((el) => revealObserver.observe(el));
+}
+window.addEventListener("load", () => {
+  document.querySelectorAll(".fade-in-text").forEach((el) => {
+    el.style.animationPlayState = "running";
+  });
+  const loader = document.getElementById("site-preloader");
+  if (loader) {
+    loader.classList.add("preloader--hide");
+    document.body.classList.remove("preloader-active");
+    loader.addEventListener(
+      "transitionend",
+      () => loader.remove(),
+      { once: true }
+    );
+  }
+});
+const header = document.querySelector(".header-nav");
+if (header) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+}
+
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  const statusEl = contactForm.querySelector("[data-status]");
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    contactForm.reset();
+    if (statusEl) {
+      statusEl.classList.add("is-visible");
+      statusEl.textContent = "پیام شما ثبت شد (نمونه).";
+      setTimeout(() => statusEl.classList.remove("is-visible"), 3500);
+    }
+  });
+}
