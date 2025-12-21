@@ -110,7 +110,7 @@
             </p>
             <div class="hero-cta">
               <a href="#projects" class="cta-button">مشاهده نمونه کارها</a>
-              <a href="#contact" class="secondary-button">در تماس باشیم</a>
+              <a href="#contact" class="secondary-button">در ارتباط باشیم</a>
             </div>
             <div class="social-links" aria-label="لینک‌های اجتماعی">
               <a
@@ -204,11 +204,11 @@
         aria-labelledby="projects-heading"
       >
         <h2 id="projects-heading">نمونه‌کارها</h2>
-        <div class="projects-grid">
-          <div class="project-card" data-animate>
+       <div id="react-projects"></div>
+
             <div class="project-header">
-              <h3>پروژه ۱: Landing Page شخصی</h3>
-              <span>2024</span>
+              <h3>پروژه ۱ : سایت شخصی</h3>
+              <span>2025</span>
             </div>
             <p>
               صفحه فرود معرفی شخصی با تأکید بر دسترس‌پذیری، انیمیشن‌های ظریف و
@@ -228,58 +228,6 @@
                 >مشاهده کد</a
               >
               <a href="#hero" class="project-demo">دمو زنده</a>
-            </div>
-          </div>
-
-          <div class="project-card" data-animate>
-            <div class="project-header">
-              <h3>پروژه ۲: داشبورد مدیریت</h3>
-              <span>2023</span>
-            </div>
-            <p>
-              طراحی سیستم مدیریتی با Dark Mode، نمودارهای سبک و اجزای واکنش‌گرا
-              برای نمایش آمار روزانه.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">CSS Grid</span>
-              <span class="project-tag">Chart.js</span>
-              <span class="project-tag">UX Writing</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://github.com/kiannaseranii-ki"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >مشاهده کد</a
-              >
-              <a href="#" class="project-demo" aria-disabled="true">به‌زودی</a>
-            </div>
-          </div>
-
-          <div class="project-card" data-animate>
-            <div class="project-header">
-              <h3>پروژه ۳: وبلاگ فنی</h3>
-              <span>2022</span>
-            </div>
-            <p>
-              توسعه قالب وبلاگ برای انتشار مقالات فنی با تمرکز بر SEO و تجربه
-              مطالعه راحت در موبایل.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">WordPress</span>
-              <span class="project-tag">SEO</span>
-              <span class="project-tag">Performance</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://github.com/kiannaseranii-ki"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >مشاهده کد</a
-              >
-              <a href="#" class="project-demo" aria-disabled="true">به‌زودی</a>
             </div>
           </div>
         </div>
@@ -354,13 +302,7 @@
           </a>
         </div>
 
-        <form class="contact-form" id="contact-form">
-          <input type="text" name="name" placeholder="نام شما" required />
-          <input type="email" name="email" placeholder="ایمیل" required />
-          <textarea name="message" placeholder="پیام شما" required></textarea>
-          <button type="submit" class="cta-button">ارسال پیام</button>
-          <p class="form-status" data-status></p>
-        </form>
+       <div id="react-contact-form"></div>
       </section>
     </main>
 
@@ -369,5 +311,18 @@
     </footer>
 
     <script src="js/main.js" defer></script>
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="js/react-contact-form.js"></script>   
+    <script src="js/react-projects.js"></script>
+    <!-- فرم مخفی (static) -->
+     <form name="contact" method="POST" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
+
   </body>
 </html>
