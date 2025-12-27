@@ -316,13 +316,16 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="js/react-contact-form.js"></script>   
     <script src="js/react-projects.js"></script>
-    <!-- فرم مخفی (static) -->
-     <form name="contact" method="POST" data-netlify="true" hidden>
+    <!-- Netlify Forms: static form for detection -->
+<form name="contact" method="POST" data-netlify="true" hidden>
   <input type="hidden" name="form-name" value="contact" />
   <input type="text" name="name" />
   <input type="email" name="email" />
   <textarea name="message"></textarea>
 </form>
 
+   
+
   </body>
 </html>
+ 
