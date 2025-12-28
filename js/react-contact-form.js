@@ -1,10 +1,16 @@
 const e = React.createElement;
 
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+
 function ContactForm() {
   const [form, setForm] = React.useState({
     name: "",
     email: "",
     message: "",
+    botField: "",
   });
 
   const [status, setStatus] = React.useState({
@@ -19,18 +25,24 @@ function ContactForm() {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    // پیام در حال ارسال (اختیاری اما خوب)
     setStatus({ visible: true, text: "در حال ارسال..." });
 
-    const data = new FormData(event.target);
+    const payload = {
+      "form-name": "contact",
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      "bot-field": form.botField,
+    };
 
     fetch("/", {
       method: "POST",
-      body: data,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(payload),
     })
       .then(() => {
-        setStatus({ visible: true, text: "پیام شما ارسال شد." });
-        setForm({ name: "", email: "", message: "" });
+        setStatus({ visible: true, text: "پیام شما ارسال شد. ممنون!" });
+        setForm({ name: "", email: "", message: "", botField: "" });
 
         window.clearTimeout(ContactForm._t);
         ContactForm._t = window.setTimeout(() => {
@@ -38,7 +50,10 @@ function ContactForm() {
         }, 3500);
       })
       .catch(() => {
-        setStatus({ visible: true, text: "ارسال ناموفق بود." });
+        setStatus({
+          visible: true,
+          text: "خطا شد. دوباره تلاش کنید.",
+        });
       });
   };
 
@@ -49,20 +64,34 @@ function ContactForm() {
       name: "contact",
       method: "POST",
       "data-netlify": "true",
+      "netlify-honeypot": "bot-field",
       onSubmit,
     },
 
-    // فیلد مخفی برای Netlify (خیلی مهم)
     e("input", {
       type: "hidden",
       name: "form-name",
       value: "contact",
     }),
 
+    e(
+      "p",
+      { className: "sr-only" },
+      e("label", { htmlFor: "bot-field" }, "این فیلد را خالی بگذارید"),
+      e("input", {
+        id: "bot-field",
+        name: "bot-field",
+        value: form.botField,
+        onChange: onChange("botField"),
+        tabIndex: "-1",
+        autoComplete: "off",
+      })
+    ),
+
     e("input", {
       type: "text",
       name: "name",
-      placeholder: "نام شما",
+      placeholder: "نام",
       required: true,
       value: form.name,
       onChange: onChange("name"),
@@ -95,7 +124,6 @@ function ContactForm() {
   );
 }
 
-// Mount
 const mount = document.getElementById("react-contact-form");
 if (mount) {
   ReactDOM.createRoot(mount).render(e(ContactForm));
