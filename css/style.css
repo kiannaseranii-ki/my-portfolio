@@ -454,7 +454,8 @@ p {
 /* موبایل و تبلت  */
 @media screen and (max-width: 767px) {
   .header-nav {
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start; /* in RTL this anchors items on the right */
     padding: 10px 14px;
     gap: 14px;
   }
@@ -462,6 +463,15 @@ p {
   /* *** نمایش دکمه همبرگری در موبایل *** */
   .header-mobile-nav {
     display: flex;
+    order: 1;
+  }
+
+  .site-branding {
+    order: 2;
+  }
+
+  .horizontal-list {
+    order: 3;
   }
 
   /* تنظیم منوی کشویی در حالت پنهان */
