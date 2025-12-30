@@ -21,6 +21,7 @@ body {
   margin: 0;
   font-family: "Vazirmatn", Tahoma, "Helvetica Neue", Arial, sans-serif;
   direction: rtl;
+  overflow-x: hidden;
 }
 
 /* لینک‌ها */
@@ -454,6 +455,8 @@ p {
 @media screen and (max-width: 767px) {
   .header-nav {
     justify-content: space-between;
+    padding: 10px 14px;
+    gap: 14px;
   }
 
   /* *** نمایش دکمه همبرگری در موبایل *** */
@@ -523,6 +526,60 @@ p {
   }
   .hero-cta,
   .hero-section .social-links {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 32px 16px;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 20px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  .hero-visual {
+    padding: 20px;
+    min-height: 220px;
+  }
+
+  .hero-visual img {
+    width: min(220px, 70vw);
+    height: min(220px, 70vw);
+  }
+
+  .hero-visual-card {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-btn {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 150px;
     justify-content: center;
   }
 }
