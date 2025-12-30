@@ -318,18 +318,8 @@
     <script src="js/react-projects.js"></script>
     <!-- Netlify Forms: static form for detection + honeypot -->
 <!-- Netlify Forms: static form for detection + honeypot -->
-<form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="spam"
->
+<form name="contact" method="POST" data-netlify="true" hidden>
   <input type="hidden" name="form-name" value="contact" />
-
-  <p hidden>
-    <label>Don’t fill this out: <input name="spam" /></label>
-  </p>
-
   <input type="text" name="name" />
   <input type="email" name="email" />
   <textarea name="message"></textarea>
