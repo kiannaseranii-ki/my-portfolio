@@ -48,6 +48,7 @@ a {
   align-items: center;
   border-bottom: 2px solid var(--accent-blue);
   gap: 25px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* عنوان سایت  */
@@ -95,14 +96,34 @@ a {
   align-items: center;
   gap: 10px;
   color: var(--text-light);
+  position: relative;
 }
 .brand-logo {
   width: 57px;
   height: 57px;
   border-radius: 12px;
   background: #090f1b;
-  padding: 6px;
+  padding: 3px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.brand-link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 6px;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+.brand-link:hover::after,
+.brand-link:focus-visible::after {
+  transform: scaleX(1);
 }
 .brand-name {
   font-size: 1.2rem;

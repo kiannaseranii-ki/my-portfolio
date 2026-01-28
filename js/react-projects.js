@@ -8,6 +8,8 @@ function Projects() {
       year: "2025",
       desc: "پورتفولیو شخصی با تمرکز بر UX و Performance",
       tags: ["HTML", "CSS", "Vanilla JS"],
+      demoUrl: "#hero",
+      codeUrl: "https://github.com/kiannaseranii-ki/my-portfolio",
     },
   ];
 
@@ -25,6 +27,25 @@ function Projects() {
           { className: "project-tags" },
           p.tags.map((t) =>
             createElement("span", { className: "project-tag" }, t)
+          )
+        ),
+        createElement(
+          "div",
+          { className: "project-actions" },
+          createElement(
+            "a",
+            { href: p.demoUrl, className: "project-demo" },
+            "دمو زنده"
+          ),
+          createElement(
+            "a",
+            {
+              href: p.codeUrl,
+              className: "project-link",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
+            "مشاهده کد"
           )
         )
       )
