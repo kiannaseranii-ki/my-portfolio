@@ -85,7 +85,7 @@ function ContactForm() {
         onChange: onChange("botField"),
         tabIndex: "-1",
         autoComplete: "off",
-      })
+      }),
     ),
 
     e("input", {
@@ -119,8 +119,8 @@ function ContactForm() {
     e(
       "p",
       { className: `form-status ${status.visible ? "is-visible" : ""}` },
-      status.text
-    )
+      status.text,
+    ),
   );
 }
 

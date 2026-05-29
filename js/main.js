@@ -9,7 +9,7 @@ if (mobileNavButton && navList && primaryNav) {
   let lastActiveElement = null;
   const getFocusable = () =>
     Array.from(
-      navList.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])')
+      navList.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])'),
     ).filter((el) => !el.hasAttribute("disabled"));
 
   const keydownTrapHandler = (e) => {
@@ -108,7 +108,7 @@ if (animatedItems.length) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
   animatedItems.forEach((el) => revealObserver.observe(el));
 }
@@ -120,11 +120,9 @@ window.addEventListener("load", () => {
   if (loader) {
     loader.classList.add("preloader--hide");
     document.body.classList.remove("preloader-active");
-    loader.addEventListener(
-      "transitionend",
-      () => loader.remove(),
-      { once: true }
-    );
+    loader.addEventListener("transitionend", () => loader.remove(), {
+      once: true,
+    });
   }
 });
 const header = document.querySelector(".header-nav");
@@ -151,3 +149,13 @@ if (contactForm) {
     }
   });
 }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".project-card").forEach((card) => {
+  observer.observe(card);
+});

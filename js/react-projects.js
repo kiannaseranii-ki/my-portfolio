@@ -1,56 +1,73 @@
-const { createElement } = React;
-const root = ReactDOM.createRoot(document.getElementById("react-projects"));
+const projects = [
+  {
+    title: "وبسایت شخصی",
+    year: "2025",
+    status: "منتشر شده",
+    desc: "وبسایت شخصی و پورتفولیو من با طراحی مینیمال، تمرکز بر تجربه کاربری و رابط کاربری مدرن.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    demoUrl: "https://www.kiannaserani.ir",
+    codeUrl: "https://github.com/kiannaseranii-ki/my-portfolio",
+  },
+  {
+    title: "فروشگاه محصولات اپل",
+    year: "2026",
+    status: "تکمیل شده",
+    desc: "طراحی و توسعه فروشگاه آنلاین محصولات اپل با الهام از تم اپل، رابط کاربری مدرن و تجربه کاربری روان.",
+    tags: ["React", "HTML", "CSS", "JavaScript"],
+    demoUrl: "https://shop-website-project.netlify.app",
+    codeUrl: "https://github.com/kiannaseranii-ki/shop-portfolio#",
+    imageUrl: "/images/apple-store.png",
+  },
+];
 
-function Projects() {
-  const projects = [
-    {
-      title: "سایت شخصی",
-      year: "2025",
-      desc: "پورتفولیو شخصی با تمرکز بر UX و Performance",
-      tags: ["HTML", "CSS", "Vanilla JS"],
-      demoUrl: "#hero",
-      codeUrl: "https://github.com/kiannaseranii-ki/my-portfolio",
-    },
-  ];
+const projectsContainer = document.getElementById("react-projects");
 
-  return createElement(
-    "div",
-    { className: "projects-grid" },
-    projects.map((p, i) =>
-      createElement(
-        "div",
-        { className: "project-card", key: i },
-        createElement("h3", null, p.title),
-        createElement("p", null, p.desc),
-        createElement(
-          "div",
-          { className: "project-tags" },
-          p.tags.map((t) =>
-            createElement("span", { className: "project-tag" }, t)
+if (projectsContainer) {
+  projectsContainer.innerHTML = `
+    <section class="projects-section">
+      <h2 class="section-title">نمونه‌کارها</h2>
+      <div class="projects-grid">
+        ${projects
+          .map(
+            (project) => `
+          <article class="project-card ${project.imageUrl ? "has-image" : "no-image"}">
+            ${
+              project.imageUrl
+                ? `
+              <div class="project-image-container">
+                <img src="${project.imageUrl}" alt="${project.title}" class="project-image">
+              </div>
+            `
+                : ""
+            }
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-year">${project.year}</span>
+                <span class="project-status">${project.status}</span>
+              </div>
+
+              <h3 class="project-title">${project.title}</h3>
+              <p class="project-desc">${project.desc}</p>
+
+              <ul class="tags">
+                ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
+              </ul>
+
+              <div class="project-links">
+                <a href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" class="project-link project-link-demo">
+                  مشاهده سایت
+                </a>
+                <a href="${project.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-link project-link-code">
+                  مشاهده کد
+                </a>
+              </div>
+            </div>
+          </article>
+        `,
           )
-        ),
-        createElement(
-          "div",
-          { className: "project-actions" },
-          createElement(
-            "a",
-            { href: p.demoUrl, className: "project-demo" },
-            "دمو زنده"
-          ),
-          createElement(
-            "a",
-            {
-              href: p.codeUrl,
-              className: "project-link",
-              target: "_blank",
-              rel: "noopener noreferrer",
-            },
-            "مشاهده کد"
-          )
-        )
-      )
-    )
-  );
+          .join("")}
+      </div>
+    </section>
+  `;
 }
-
-root.render(createElement(Projects));
