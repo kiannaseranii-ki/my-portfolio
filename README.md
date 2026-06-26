@@ -6,9 +6,9 @@ The project is designed to be simple, fast, and accessible, while using real-wor
 
 ---
 
-## Website Link 
+## Website Link
 
-🔗 http://kiannaserani.ir
+🔗 https://kiannaserani.ir
 
 ---
 
@@ -56,4 +56,4 @@ The project is deployed using Netlify with automatic deployments enabled:
 Front-End Developer (Junior)
 
 - GitHub: https://github.com/kiannaseranii-ki
-- Portfolio: https://kiannaserani.netlify.app
+- Portfolio: https://kiannaserani.ir

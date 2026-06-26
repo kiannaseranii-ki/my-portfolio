@@ -1,42 +1,46 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title class="title-name">پورتفولیو - کیان ناصرانی</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>پورتفولیو - کیان ناصرانی</title>
     <meta
       name="description"
       content="کیان ناصرانی | توسعه‌دهنده فرانت‌اند؛ مهارت‌ها، نمونه‌کارها و روش‌های ارتباط"
     />
-    <link rel="canonical" href="https://example.com/" />
+    <link rel="canonical" href="https://kiannaserani.ir/" />
     <link rel="icon" href="images/site-logo.png" type="image/png" />
+    <link rel="shortcut icon" href="/personal site/images/site-logo.png" />
     <meta property="og:title" content="کیان ناصرانی - توسعه‌دهنده فرانت‌اند" />
     <meta
       property="og:description"
       content="پورتفولیو، مهارت‌ها و پروژه‌های ساخته‌شده با تمرکز بر UX"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/" />
-    <meta property="og:image" content="https://example.com/cover.jpg" />
+    <meta property="og:url" content="https://kiannaserani.ir/" />
+    <meta
+      property="og:image"
+      content="https://kiannaserani.ir/images/site-logo.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Kian Naserani",
-        "url": "https://example.com/",
+        "url": "https://kiannaserani.ir/",
         "jobTitle": "Front-End Developer",
         "sameAs": [
           "https://github.com/kiannaseranii-ki",
-          "mailto:kian.naseranii@gmail.com"
+          "https://www.linkedin.com/in/kian-naserani-977729273"
         ]
       }
     </script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="preloader-active">
     <div id="site-preloader" class="preloader" role="status" aria-live="polite">
@@ -50,122 +54,88 @@
       </div>
     </div>
 
-    <a class="skip-link" href="#main">پرش به محتوا</a>
-    <header class="header">
-      <nav
-        id="primary-navigation"
-        class="header-nav"
-        role="navigation"
-        aria-label="منوی اصلی"
-      >
-        <div class="site-branding fade-in-text">
-          <a href="#hero" class="brand-link" aria-label="بازگشت به ابتدای صفحه">
-            <img
-              src="images/site-logo.png"
-              alt="لوگو کیان ناصرانی"
-              class="brand-logo"
-              width="64"
-              height="64"
-              decoding="async"
-            />
-            <span class="sr-only">کیان ناصرانی</span>
-          </a>
-        </div>
+    <div class="bg-disc" aria-hidden="true">
+      <img src="images/site-logo.png" alt="" />
+    </div>
 
+    <a class="skip-link" href="#main">پرش به محتوا</a>
+
+    <div class="nav-wrap">
+      <nav class="pill" id="pill" aria-label="منوی اصلی">
+        <a href="#hero" class="brand" aria-label="بازگشت به ابتدای صفحه">
+          <img src="images/site-logo.png" alt="کیان ناصرانی" />
+        </a>
         <button
-          class="header-mobile-nav"
+          class="menu-btn"
+          id="menuBtn"
           aria-expanded="false"
           aria-controls="site-menu"
           aria-label="باز و بسته کردن منو"
-          title="باز و بسته کردن منو"
         >
-          <span class="header-mobile-nav-item"></span>
-          <span class="header-mobile-nav-item"></span>
-          <span class="header-mobile-nav-item"></span>
+          ☰
         </button>
-
-        <ul class="horizontal-list" id="site-menu">
-          <li role="none"><a href="#skills">مهارت‌ها</a></li>
-          <li role="none"><a href="#about">درباره من</a></li>
-          <li role="none"><a href="#projects">نمونه‌کارها</a></li>
-          <li role="none"><a href="#contact">تماس با من</a></li>
+        <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+        <ul class="nav-links" id="site-menu">
+          <li><a href="#skills">مهارت‌ها</a></li>
+          <li><a href="#about">درباره من</a></li>
+          <li><a href="#projects">نمونه‌کارها</a></li>
+          <li><a href="#contact">تماس با من</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
 
-    <main id="main" class="main-content">
-      <section
-        id="hero"
-        class="section hero-section"
-        aria-labelledby="hero-heading"
-      >
-        <div class="hero-grid">
-          <div class="hero-text" data-animate>
-            <span class="hero-eyebrow">توسعه‌دهنده فرانت‌اند</span>
-            <h1 id="hero-heading" class="fade-in-text">
-              کیان ناصرانی، طراح رابط‌های کاربری مدرن
-            </h1>
-            <p class="subtitle">
-              ساخت تجربه‌های سریع، واکنش‌گرا و قابل‌دسترس با تمرکز بر جزئیات
-              طراحی و کدنویسی تمیز در HTML، CSS و JavaScript خالص.
-            </p>
-            <div class="hero-cta">
-              <a href="#projects" class="cta-button">مشاهده نمونه کارها</a>
-              <a href="#contact" class="secondary-button">در ارتباط باشیم</a>
-            </div>
-            <div class="social-links" aria-label="لینک‌های اجتماعی">
-              <a
-                href="https://github.com/kiannaseranii-ki/my-portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="github-icon"
-                  width="18"
-                  height="18"
-                />
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kian-naserani-977729273"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="linkedin-icon"
-                  width="18"
-                  height="18"
-                />
-                LinkedIn
-              </a>
-            </div>
+    <main id="main">
+      <section id="hero" class="section hero" aria-labelledby="hero-heading">
+        <div class="hero-text" data-animate>
+          <span class="hero-eyebrow">توسعه‌دهنده فرانت‌اند</span>
+          <h1 id="hero-heading">
+            کیان ناصرانی،<br />طراح رابط‌های کاربری مدرن
+          </h1>
+          <p class="subtitle">
+            ساخت تجربه‌های سریع، واکنش‌گرا و قابل‌دسترس با تمرکز بر جزئیات طراحی
+            و کدنویسی تمیز در HTML، CSS و JavaScript خالص.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn cta-button">مشاهده نمونه کارها</a>
+            <a
+              href="resume.pdf"
+              class="btn secondary-button"
+              download="Kian-Naserani-Resume.pdf"
+              >دانلود رزومه</a
+            >
           </div>
+        </div>
 
-          <div class="hero-visual" data-animate="slide-left">
-            <img src="images/site-logo.png" alt="تصویر نمایه کیان ناصرانی" />
-            <div class="hero-visual-card">
-              <span>2 پروژه</span>
-              <span>همکاری فعال و فریلنس</span>
-            </div>
+        <div class="hero-visual" data-animate="slide-left">
+          <div class="stage">
+            <video
+              class="hero-logo-video"
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+              poster="images/site-logo.png"
+              aria-hidden="true"
+            >
+              <source src="images/kn-logo.webm" type="video/webm" />
+              <img src="images/site-logo.png" alt="لوگوی کیان ناصرانی" />
+            </video>
+          </div>
+          <div class="hero-visual-card">
+            <span>2 پروژه</span>
+            <span>همکاری فعال و فریلنس</span>
           </div>
         </div>
       </section>
 
-      <section
-        id="skills"
-        class="section skills-section"
-        aria-labelledby="skills-heading"
-      >
-        <h2 id="skills-heading">مهارت‌های فنی</h2>
+      <section id="skills" class="section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading" class="section-title" data-animate>
+          مهارت‌های فنی<span class="bar"></span>
+        </h2>
         <div class="skills-grid" data-animate>
-          <div class="skill-item">HTML5 & Semantic Markup</div>
-          <div class="skill-item">CSS3 (Flexbox & Grid)</div>
+          <div class="skill-item">HTML5 &amp; Semantic Markup</div>
+          <div class="skill-item">CSS3 (Flexbox &amp; Grid)</div>
           <div class="skill-item">JavaScript (ES6+)</div>
           <div class="skill-item">Responsive Design</div>
           <div class="skill-item">Version Control (Git/GitHub)</div>
@@ -173,12 +143,10 @@
         </div>
       </section>
 
-      <section
-        id="about"
-        class="section about-me-section"
-        aria-labelledby="about-heading"
-      >
-        <h2 id="about-heading">درباره من</h2>
+      <section id="about" class="section" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="section-title" data-animate>
+          درباره من<span class="bar"></span>
+        </h2>
         <div class="about-layout" data-animate="slide-left">
           <div class="about-text">
             <p>
@@ -201,81 +169,149 @@
         </div>
       </section>
 
-      <section
-        id="projects"
-        class="section projects-section"
-        aria-labelledby="projects-heading"
-      >
-        <h2 id="projects-heading">نمونه‌کارها</h2>
-        <div id="react-projects"></div>
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="section-title" data-animate>
+          نمونه‌کارها<span class="bar"></span>
+        </h2>
+        <div class="projects-grid">
+          <article class="project-card no-image" data-animate>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-year">2025</span>
+                <span class="project-status">منتشر شده</span>
+              </div>
+              <h3 class="project-title">وبسایت شخصی</h3>
+              <p class="project-desc">
+                وبسایت شخصی و پورتفولیو من با طراحی مینیمال، تمرکز بر تجربه
+                کاربری و رابط کاربری مدرن.
+              </p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://kiannaserani.ir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link-demo"
+                  >مشاهده سایت</a
+                >
+                <a
+                  href="https://github.com/kiannaseranii-ki/my-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link-code"
+                  >مشاهده کد</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card has-image" data-animate="slide-left">
+            <div class="project-image-container">
+              <img
+                src="images/apple-store.png"
+                alt="فروشگاه محصولات اپل"
+                class="project-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-year">2026</span>
+                <span class="project-status">تکمیل شده</span>
+              </div>
+              <h3 class="project-title">فروشگاه محصولات اپل</h3>
+              <p class="project-desc">
+                طراحی و توسعه فروشگاه آنلاین محصولات اپل با الهام از تم اپل،
+                رابط کاربری مدرن و تجربه کاربری روان.
+              </p>
+              <ul class="tags">
+                <li>React</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://shop-website-project.netlify.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link-demo"
+                  >مشاهده سایت</a
+                >
+                <a
+                  href="https://github.com/kiannaseranii-ki/shop-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link project-link-code"
+                  >مشاهده کد</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section
-        id="contact"
-        class="section contact-section"
-        aria-labelledby="contact-heading"
-      >
-        <h2 id="contact-heading">ارتباط با من</h2>
-        <p>
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="section-title" data-animate>
+          ارتباط با من<span class="bar"></span>
+        </h2>
+        <p class="lead" data-animate>
           برای همکاری یا طرح ایده جدید می‌توانید از شبکه‌های زیر استفاده کنید یا
           فرم کوتاه را تکمیل کنید تا در اولین فرصت پاسخ دهم.
         </p>
 
-        <div class="contact-links">
+        <div class="contact-links" data-animate>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kian.naseranii@gmail.com"
-            class="contact-btn gmail-btn"
+            class="contact-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_(2020).svg"
-              class="gmail-icon"
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
               alt=""
               aria-hidden="true"
             />
             Gmail
           </a>
-
           <a
             href="https://github.com/kiannaseranii-ki"
-            class="contact-btn github-btn"
+            class="contact-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
-              class="github-icon"
               alt=""
               aria-hidden="true"
             />
             GitHub
           </a>
-
           <a
             href="https://t.me/Kiannaserani"
-            class="contact-btn telegram-btn"
+            class="contact-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg"
-              class="telegram-icon"
               alt=""
               aria-hidden="true"
             />
             Telegram
           </a>
-
           <a
             href="https://www.linkedin.com/in/kian-naserani-977729273"
-            class="contact-btn linkedin-btn"
+            class="contact-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-              class="linkedin-icon"
               alt=""
               aria-hidden="true"
             />
@@ -283,7 +319,44 @@
           </a>
         </div>
 
-        <div id="react-contact-form"></div>
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          data-animate
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="sr-only">
+            <label
+              >این فیلد را خالی بگذارید
+              <input name="bot-field" tabindex="-1" autocomplete="off"
+            /></label>
+          </p>
+          <input
+            type="text"
+            name="name"
+            placeholder="نام"
+            required
+            aria-label="نام"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="ایمیل"
+            required
+            aria-label="ایمیل"
+          />
+          <textarea
+            name="message"
+            placeholder="پیام شما"
+            required
+            aria-label="پیام شما"
+          ></textarea>
+          <button type="submit" class="btn cta-button">ارسال پیام</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </main>
 
@@ -292,18 +365,5 @@
     </footer>
 
     <script src="js/main.js" defer></script>
-    <!-- React -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="js/react-contact-form.js"></script>
-    <script src="js/react-projects.js"></script>
-    <!-- Netlify Forms: static form for detection + honeypot -->
-    <!-- Netlify Forms: static form for detection + honeypot -->
-    <form name="contact" method="POST" data-netlify="true" hidden>
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
   </body>
 </html>
