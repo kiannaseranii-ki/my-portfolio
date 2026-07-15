@@ -144,20 +144,6 @@ function onScroll() {
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-/* ── Reduced motion: freeze logo video ── */
-if (reduce) {
-  const v = document.querySelector(".hero-logo-video");
-  if (v) {
-    v.removeAttribute("autoplay");
-    v.addEventListener("loadedmetadata", () => {
-      try {
-        v.pause();
-        v.currentTime = v.duration;
-      } catch (err) {}
-    });
-  }
-}
-
 /* ── Contact form → Netlify ── */
 const form = document.querySelector(".contact-form");
 if (form) {
