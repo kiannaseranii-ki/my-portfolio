@@ -1,5 +1,9 @@
 "use strict";
 
+/* ── Auto-update footer year ── */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ── Preloader ── */
