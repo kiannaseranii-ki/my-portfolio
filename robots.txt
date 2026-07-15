@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kiannaserani.ir/sitemap.xml
