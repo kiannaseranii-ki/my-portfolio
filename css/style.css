@@ -275,6 +275,14 @@ body.preloader-active { overflow: hidden; }
     border: 1px solid var(--line); border-radius: 16px; padding: 10px;
   }
   .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
+  /* Mobile: keep the hero logo floating + glowing exactly like desktop.
+     Re-asserted here so the animation is never dropped on small screens.
+     prefers-reduced-motion (below) still disables it when requested. */
+  .hero-logo {
+    animation: logoIn 1s ease 0.1s forwards,
+               heroFloat 4s ease-in-out 1.1s infinite,
+               heroGlow 4.5s ease-in-out 1.1s infinite;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

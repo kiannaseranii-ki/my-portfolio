@@ -46,11 +46,12 @@ window.addEventListener("resize", () => {
 });
 
 /* ── Sliding indicator scrollspy ──
-   The glowing pill starts on the brand logo (hero)
-   and slides to the matching nav link as sections scroll in.
+   The glowing pill slides between REAL nav links only
+   (مهارت‌ها / درباره من / نمونه‌کارها / تماس با من).
+   On the hero / page top the pill is hidden so it NEVER
+   overlaps the KN brand logo.
 ── */
 const indicator = document.getElementById("navIndicator");
-const brand = document.querySelector(".brand");
 
 function moveIndicator(target) {
   if (!indicator || !target || !pill) return;
@@ -58,14 +59,13 @@ function moveIndicator(target) {
   const targetRect = target.getBoundingClientRect();
   indicator.style.left = targetRect.left - pillRect.left + "px";
   indicator.style.width = targetRect.width + "px";
-  if (!indicator.classList.contains("is-ready")) {
-    // first call: snap instantly, then enable transitions
-    indicator.style.transition = "none";
-    requestAnimationFrame(() => {
-      indicator.classList.add("is-ready");
-      indicator.style.transition = "";
-    });
-  }
+  indicator.classList.add("is-ready");
+}
+
+// No active section yet → hide the pill so it never sits on the logo.
+function hideIndicator() {
+  if (!indicator) return;
+  indicator.classList.remove("is-ready");
 }
 
 const heroSection = document.querySelector("#hero");
@@ -74,7 +74,6 @@ const linkSections = navLinks
   .filter(Boolean);
 
 const allSections = [heroSection, ...linkSections].filter(Boolean);
-const allTargets = [brand, ...navLinks];
 
 function updateActiveSection() {
   // Find the last section whose top is above 40% of the viewport height
@@ -84,24 +83,38 @@ function updateActiveSection() {
     if (section.offsetTop <= threshold) activeIdx = i;
   });
 
-  moveIndicator(allTargets[activeIdx]);
-
   navLinks.forEach((l) => l.classList.remove("active"));
-  if (activeIdx > 0) navLinks[activeIdx - 1].classList.add("active");
+  if (activeIdx === 0) {
+    // Hero / very top: no nav link active → hide pill (never on the logo)
+    hideIndicator();
+  } else {
+    // activeIdx is offset by 1 because hero is index 0 but has no nav link
+    const activeLink = navLinks[activeIdx - 1];
+    if (activeLink) {
+      activeLink.classList.add("active");
+      moveIndicator(activeLink);
+    } else {
+      hideIndicator();
+    }
+  }
 }
 
 // Run on scroll (already throttled with rAF via onScroll, but spy needs its own)
 window.addEventListener("scroll", updateActiveSection, { passive: true });
 
-// Initialise after layout is ready
-window.addEventListener("load", () => {
+function scheduleUpdate() {
   requestAnimationFrame(updateActiveSection);
-});
+}
+
+// Initialise after layout is ready
+window.addEventListener("load", scheduleUpdate);
 
 // Recalculate on resize (positions may shift)
-window.addEventListener("resize", () => {
-  requestAnimationFrame(updateActiveSection);
-});
+window.addEventListener("resize", scheduleUpdate);
+
+// First paint: make sure the pill starts hidden on the hero
+document.addEventListener("DOMContentLoaded", scheduleUpdate);
+scheduleUpdate();
 
 /* ── Reveal on scroll ── */
 const animated = document.querySelectorAll("[data-animate]");
